@@ -6,11 +6,14 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/vivek700/goWeb/database"
 )
 
 func main() {
 
 	r := mux.NewRouter()
+
+	fmt.Println(database.CollectDb())
 
 	fmt.Println("Server starting...")
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
